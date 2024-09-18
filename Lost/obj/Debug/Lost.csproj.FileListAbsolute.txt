@@ -1,0 +1,12 @@
+C:\Users\gojuc\source\repos\Lost\bin\Debug\Lost.exe.config
+C:\Users\gojuc\source\repos\Lost\bin\Debug\Lost.exe
+C:\Users\gojuc\source\repos\Lost\bin\Debug\Lost.pdb
+C:\Users\gojuc\source\repos\Lost\obj\Debug\Lost.csproj.AssemblyReference.cache
+C:\Users\gojuc\source\repos\Lost\obj\Debug\Lost.Form1.resources
+C:\Users\gojuc\source\repos\Lost\obj\Debug\Lost.Properties.Resources.resources
+C:\Users\gojuc\source\repos\Lost\obj\Debug\Lost.csproj.GenerateResource.cache
+C:\Users\gojuc\source\repos\Lost\obj\Debug\Lost.csproj.CoreCompileInputs.cache
+C:\Users\gojuc\source\repos\Lost\obj\Debug\Lost.exe
+C:\Users\gojuc\source\repos\Lost\obj\Debug\Lost.pdb
+C:\Users\gojuc\source\repos\Lost\obj\Debug\Lost.frmMain.resources
+C:\Users\gojuc\source\repos\Lost\obj\Debug\Lost.frmTabExample.resources

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Webber" Class="ProductDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-A3N5HRG\SQLEXPRESS;Initial Catalog=Webber;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="Lost.Properties.Settings" SettingsPropertyName="WebberConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.NewPrices" Member="NewPrices">
+    <Type Name="NewPrice">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Product_NewPrice" Member="Product" ThisKey="ProductID" OtherKey="ID" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Products" Member="Products">
+    <Type Name="Product">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Priceab" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Product_NewPrice" Member="NewPrices" ThisKey="ID" OtherKey="ProductID" Type="NewPrice" />
+      <Association Name="Product_ProductPrice" Member="ProductPrices" ThisKey="ID" OtherKey="ProductID" Type="ProductPrice" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Price" Member="Prices">
+    <Type Name="Price">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductPrice" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Price_ProductPrice" Member="ProductPrices" ThisKey="ID" OtherKey="PriceID" Type="ProductPrice" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductPrice" Member="ProductPrices">
+    <Type Name="ProductPrice">
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PriceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="Price_ProductPrice" Member="Price" ThisKey="PriceID" OtherKey="ID" Type="Price" IsForeignKey="true" />
+      <Association Name="Product_ProductPrice" Member="Product" ThisKey="ProductID" OtherKey="ID" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
